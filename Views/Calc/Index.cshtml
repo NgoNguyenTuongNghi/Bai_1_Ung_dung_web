@@ -1,0 +1,50 @@
+﻿@model Calculator.Models.calc
+@{
+    ViewBag.Title = "Index";
+}
+<style>
+    .nennen {
+        box-sizing: border-box;
+        text-align: center;
+        margin: 1px;
+        padding: 10px;
+        border: 1px solid black;
+        width: 350px;
+        height: 250px;
+    }
+</style>
+<html>
+    <head>
+    </head>
+    
+    <body>
+        <br />
+        <div class="row, nennen">
+            <h3><b>Calculator</b></h3>
+            @using (Html.BeginForm("/Index", "calc", FormMethod.Post))
+            {
+                <div class="form-group">
+                    <label for="no1">Value 1 :</label>
+                    <input type="text" class="from-control" id="val1" name="val1" value="@Model.val1" />
+                </div>
+                <div class="form-group">
+                    <label for="no1">Value 2 :</label>
+                    <input type="text" class="from-control" id="val2" name="val2" value="@Model.val2" />
+                </div>
+                <div>
+                    <button type="submit" class="btn btn-info" id="add" value="add" name="calculate">+</button>
+                    <button type="submit" class="btn btn-info" id="min" value="min" name="calculate">-</button>
+                    <button type="submit" class="btn btn-info" id="sub" value="sub" name="calculate">*</button>
+                    <button type="submit" class="btn btn-info" id="dii" value="dii" name="calculate">/</button>
+                </div>
+                <br />
+                <div class="form-group">
+                    <label for="no1">&ensp;Total :&ensp;</label>
+                    <input type="text" class="from-control" id="total" name="total" value="@Model.total" />
+                </div>
+            }
+
+        </div>
+    </body>
+</html>
+
